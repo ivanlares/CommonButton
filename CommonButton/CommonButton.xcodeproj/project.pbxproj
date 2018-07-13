@@ -10,6 +10,10 @@
 		EA8DFBD520F92B78008E4EEC /* CommonButton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA8DFBCB20F92B77008E4EEC /* CommonButton.framework */; };
 		EA8DFBDA20F92B78008E4EEC /* CommonButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8DFBD920F92B78008E4EEC /* CommonButtonTests.swift */; };
 		EA8DFBDC20F92B78008E4EEC /* CommonButton.h in Headers */ = {isa = PBXBuildFile; fileRef = EA8DFBCE20F92B77008E4EEC /* CommonButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EA8DFC5320F93D24008E4EEC /* CommonButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8DFC5220F93D24008E4EEC /* CommonButton.swift */; };
+		EAD6CB4C20F965E100EC348F /* ActivityIndicatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD6CB4920F965DB00EC348F /* ActivityIndicatorButton.swift */; };
+		EAD6CB5420F9D2A300EC348F /* BorderConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD6CB5320F9D2A300EC348F /* BorderConfiguration.swift */; };
+		EAD6CB5820F9D78800EC348F /* CornerStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD6CB5720F9D78800EC348F /* CornerStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +33,10 @@
 		EA8DFBD420F92B78008E4EEC /* CommonButtonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CommonButtonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA8DFBD920F92B78008E4EEC /* CommonButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonButtonTests.swift; sourceTree = "<group>"; };
 		EA8DFBDB20F92B78008E4EEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA8DFC5220F93D24008E4EEC /* CommonButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonButton.swift; sourceTree = "<group>"; };
+		EAD6CB4920F965DB00EC348F /* ActivityIndicatorButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorButton.swift; sourceTree = "<group>"; };
+		EAD6CB5320F9D2A300EC348F /* BorderConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderConfiguration.swift; sourceTree = "<group>"; };
+		EAD6CB5720F9D78800EC348F /* CornerStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +79,8 @@
 		EA8DFBCD20F92B77008E4EEC /* CommonButton */ = {
 			isa = PBXGroup;
 			children = (
-				EA8DFBCE20F92B77008E4EEC /* CommonButton.h */,
+				EAD6CB5520F9D2EA00EC348F /* Model */,
+				EAD6CB5620F9D31200EC348F /* Button */,
 				EA8DFBCF20F92B78008E4EEC /* Info.plist */,
 			);
 			path = CommonButton;
@@ -84,6 +93,25 @@
 				EA8DFBDB20F92B78008E4EEC /* Info.plist */,
 			);
 			path = CommonButtonTests;
+			sourceTree = "<group>";
+		};
+		EAD6CB5520F9D2EA00EC348F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EAD6CB5320F9D2A300EC348F /* BorderConfiguration.swift */,
+				EAD6CB5720F9D78800EC348F /* CornerStyle.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EAD6CB5620F9D31200EC348F /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				EA8DFBCE20F92B77008E4EEC /* CommonButton.h */,
+				EAD6CB4920F965DB00EC348F /* ActivityIndicatorButton.swift */,
+				EA8DFC5220F93D24008E4EEC /* CommonButton.swift */,
+			);
+			path = Button;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +176,7 @@
 				TargetAttributes = {
 					EA8DFBCA20F92B77008E4EEC = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 					};
 					EA8DFBD320F92B78008E4EEC = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -194,6 +223,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAD6CB5420F9D2A300EC348F /* BorderConfiguration.swift in Sources */,
+				EAD6CB4C20F965E100EC348F /* ActivityIndicatorButton.swift in Sources */,
+				EAD6CB5820F9D78800EC348F /* CornerStyle.swift in Sources */,
+				EA8DFC5320F93D24008E4EEC /* CommonButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +372,7 @@
 		EA8DFBE020F92B78008E4EEC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -347,6 +381,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = CommonButton/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -355,6 +390,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.laresivan.CommonButton;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -363,6 +399,7 @@
 		EA8DFBE120F92B78008E4EEC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -371,6 +408,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = CommonButton/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -387,6 +425,7 @@
 		EA8DFBE320F92B78008E4EEC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CommonButtonTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -404,6 +443,7 @@
 		EA8DFBE420F92B78008E4EEC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CommonButtonTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

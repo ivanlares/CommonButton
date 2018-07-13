@@ -8,20 +8,61 @@
 
 /* Begin PBXBuildFile section */
 		EA8DFBF220F92BA0008E4EEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8DFBF120F92BA0008E4EEC /* AppDelegate.swift */; };
-		EA8DFBF420F92BA0008E4EEC /* StoryboardExampleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8DFBF320F92BA0008E4EEC /* StoryboardExampleController.swift */; };
+		EA8DFBF420F92BA0008E4EEC /* ExampleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8DFBF320F92BA0008E4EEC /* ExampleController.swift */; };
 		EA8DFBF720F92BA0008E4EEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA8DFBF520F92BA0008E4EEC /* Main.storyboard */; };
 		EA8DFBF920F92BA3008E4EEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA8DFBF820F92BA3008E4EEC /* Assets.xcassets */; };
 		EA8DFBFC20F92BA3008E4EEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA8DFBFA20F92BA3008E4EEC /* LaunchScreen.storyboard */; };
+		EA8DFC6920F93E46008E4EEC /* CommonButton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA8DFC6620F93E18008E4EEC /* CommonButton.framework */; };
+		EA8DFC6A20F93E46008E4EEC /* CommonButton.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EA8DFC6620F93E18008E4EEC /* CommonButton.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EA8DFC6520F93E18008E4EEC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA8DFC6020F93E17008E4EEC /* CommonButton.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EA8DFBCB20F92B77008E4EEC;
+			remoteInfo = CommonButton;
+		};
+		EA8DFC6720F93E18008E4EEC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA8DFC6020F93E17008E4EEC /* CommonButton.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EA8DFBD420F92B78008E4EEC;
+			remoteInfo = CommonButtonTests;
+		};
+		EA8DFC6B20F93E46008E4EEC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA8DFC6020F93E17008E4EEC /* CommonButton.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = EA8DFBCA20F92B77008E4EEC;
+			remoteInfo = CommonButton;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EA8DFC6D20F93E46008E4EEC /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				EA8DFC6A20F93E46008E4EEC /* CommonButton.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		EA8DFBEE20F92BA0008E4EEC /* ExampleProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExampleProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA8DFBF120F92BA0008E4EEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EA8DFBF320F92BA0008E4EEC /* StoryboardExampleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardExampleController.swift; sourceTree = "<group>"; };
+		EA8DFBF320F92BA0008E4EEC /* ExampleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleController.swift; sourceTree = "<group>"; };
 		EA8DFBF620F92BA0008E4EEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EA8DFBF820F92BA3008E4EEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA8DFBFB20F92BA3008E4EEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA8DFBFD20F92BA3008E4EEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA8DFC6020F93E17008E4EEC /* CommonButton.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CommonButton.xcodeproj; path = ../CommonButton/CommonButton.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA8DFC6920F93E46008E4EEC /* CommonButton.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,8 +80,10 @@
 		EA8DFBE520F92BA0008E4EEC = {
 			isa = PBXGroup;
 			children = (
+				EA8DFC6020F93E17008E4EEC /* CommonButton.xcodeproj */,
 				EA8DFBF020F92BA0008E4EEC /* ExampleProject */,
 				EA8DFBEF20F92BA0008E4EEC /* Products */,
+				EA8DFC4720F93CFE008E4EEC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +99,29 @@
 			isa = PBXGroup;
 			children = (
 				EA8DFBF120F92BA0008E4EEC /* AppDelegate.swift */,
-				EA8DFBF320F92BA0008E4EEC /* StoryboardExampleController.swift */,
+				EA8DFBF320F92BA0008E4EEC /* ExampleController.swift */,
 				EA8DFBF520F92BA0008E4EEC /* Main.storyboard */,
 				EA8DFBF820F92BA3008E4EEC /* Assets.xcassets */,
 				EA8DFBFA20F92BA3008E4EEC /* LaunchScreen.storyboard */,
 				EA8DFBFD20F92BA3008E4EEC /* Info.plist */,
 			);
 			path = ExampleProject;
+			sourceTree = "<group>";
+		};
+		EA8DFC4720F93CFE008E4EEC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EA8DFC6120F93E17008E4EEC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EA8DFC6620F93E18008E4EEC /* CommonButton.framework */,
+				EA8DFC6820F93E18008E4EEC /* CommonButtonTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,10 +134,12 @@
 				EA8DFBEA20F92BA0008E4EEC /* Sources */,
 				EA8DFBEB20F92BA0008E4EEC /* Frameworks */,
 				EA8DFBEC20F92BA0008E4EEC /* Resources */,
+				EA8DFC6D20F93E46008E4EEC /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				EA8DFC6C20F93E46008E4EEC /* PBXTargetDependency */,
 			);
 			name = ExampleProject;
 			productName = ExampleProject;
@@ -110,12 +172,35 @@
 			mainGroup = EA8DFBE520F92BA0008E4EEC;
 			productRefGroup = EA8DFBEF20F92BA0008E4EEC /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = EA8DFC6120F93E17008E4EEC /* Products */;
+					ProjectRef = EA8DFC6020F93E17008E4EEC /* CommonButton.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				EA8DFBED20F92BA0008E4EEC /* ExampleProject */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		EA8DFC6620F93E18008E4EEC /* CommonButton.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CommonButton.framework;
+			remoteRef = EA8DFC6520F93E18008E4EEC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		EA8DFC6820F93E18008E4EEC /* CommonButtonTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = CommonButtonTests.xctest;
+			remoteRef = EA8DFC6720F93E18008E4EEC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		EA8DFBEC20F92BA0008E4EEC /* Resources */ = {
@@ -135,12 +220,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA8DFBF420F92BA0008E4EEC /* StoryboardExampleController.swift in Sources */,
+				EA8DFBF420F92BA0008E4EEC /* ExampleController.swift in Sources */,
 				EA8DFBF220F92BA0008E4EEC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EA8DFC6C20F93E46008E4EEC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CommonButton;
+			targetProxy = EA8DFC6B20F93E46008E4EEC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		EA8DFBF520F92BA0008E4EEC /* Main.storyboard */ = {
@@ -279,6 +372,7 @@
 		EA8DFC0120F92BA3008E4EEC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ExampleProject/Info.plist;
@@ -296,6 +390,7 @@
 		EA8DFC0220F92BA3008E4EEC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ExampleProject/Info.plist;
