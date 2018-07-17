@@ -35,11 +35,6 @@ public class ActivityIndicatorButton: UIButton {
         return indicator
     }()
     
-    var activityIndicator: UIActivityIndicatorView {
-        
-        return _activityIndicator
-    }
-    
     override init(frame: CGRect) {
         
         super.init(frame: frame)
@@ -66,17 +61,39 @@ extension ActivityIndicatorButton {
     /// starts animation and disables user interaction
     public func startAnimating() {
         
+        isUserInteractionEnabled = false
         hideButtonViews(isHidden: true)
-        isEnabled = false
         _activityIndicator.startAnimating()
+        _buttonState = .loading
     }
     
     /// stops animation and enables user interaction
     public func stopAnimating() {
         
+        isUserInteractionEnabled = true
         hideButtonViews(isHidden: false)
-        isEnabled = true
         _activityIndicator.stopAnimating()
+        _buttonState = .normal
+    }
+    
+    public func setIndicator(style: UIActivityIndicatorViewStyle) {
+        
+        _activityIndicator.activityIndicatorViewStyle = style
+    }
+    
+    public func getIndicatorStyle() -> UIActivityIndicatorViewStyle {
+        
+        return _activityIndicator.activityIndicatorViewStyle
+    }
+    
+    public func setIndicator(color: UIColor) {
+        
+        _activityIndicator.color = color
+    }
+    
+    public func getIndicatorColor() -> UIColor? {
+        
+        return _activityIndicator.color
     }
     
     /// hides text and image for button
@@ -113,7 +130,7 @@ extension ActivityIndicatorButton {
 extension ActivityIndicatorButton {
     
     public enum ButtonState {
-        /// regular
+        /// button is shown in it's normal state
         case normal
         /// activity indicator is shown
         case loading

@@ -110,27 +110,27 @@ public class CommonButton: ActivityIndicatorButton {
     //
     /// Corner style is round by default
     /// Border width is set to suggested value by default
-    static func borderedButton(borderColor: UIColor, borderWidth: CGFloat = Constants.suggestedBorderWidth, cornerStyle: CornerStyle = .round, backgroundColor: UIColor, textColor: UIColor) -> CommonButton{
+    public static func borderedButton(borderColor: UIColor, borderWidth: CGFloat = Constants.suggestedBorderWidth, cornerStyle: CornerStyle = .round, backgroundColor: UIColor, textColor: UIColor) -> CommonButton{
         
         let button = CommonButton()
         let borderConfiguration = BorderConfiguration(width: borderWidth, color: borderColor)
         button.borderConfiguration = borderConfiguration
         button.cornerStyle = cornerStyle
         button.backgroundColor = backgroundColor
-        button.titleLabel?.textColor = textColor
+        button.setTitleColor(textColor, for: .normal)
         
         return button
     }
     
     /// Returns an instance of CommonButton, with the provided corner style.
-    static func button(withCornerStyle cornerStyle: CornerStyle, backgroundColor: UIColor? = nil, textColor: UIColor? = nil) -> CommonButton {
+    public static func button(withCornerStyle cornerStyle: CornerStyle, backgroundColor: UIColor? = nil, textColor: UIColor? = nil) -> CommonButton {
         
         let button = CommonButton()
         button.cornerStyle = cornerStyle
         button.backgroundColor = backgroundColor
         if let textColor = textColor {
             
-            button.titleLabel?.textColor = textColor
+            button.setTitleColor(textColor, for: .normal)
         }
         
         return button
@@ -178,7 +178,7 @@ extension CommonButton {
         addTarget(self, action: #selector(touchUpInside), for: UIControlEvents.touchUpInside)
     }
     
-    @objc func touchUpInside(){
+    @objc private func touchUpInside(){
         
         touchUpInsideAction?()
     }
