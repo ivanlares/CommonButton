@@ -104,6 +104,37 @@ public class CommonButton: ActivityIndicatorButton {
         addTargetActions()
     }
     
+    // MARK: Static Factory Methods
+    
+    /// Returns a bordered style button
+    //
+    /// Corner style is round by default
+    /// Border width is set to suggested value by default
+    static func borderedButton(borderColor: UIColor, borderWidth: CGFloat = Constants.suggestedBorderWidth, cornerStyle: CornerStyle = .round, backgroundColor: UIColor, textColor: UIColor) -> CommonButton{
+        
+        let button = CommonButton()
+        let borderConfiguration = BorderConfiguration(width: borderWidth, color: borderColor)
+        button.borderConfiguration = borderConfiguration
+        button.cornerStyle = cornerStyle
+        button.backgroundColor = backgroundColor
+        button.titleLabel?.textColor = textColor
+        
+        return button
+    }
+    
+    /// Returns an instance of CommonButton, with the provided corner style.
+    static func button(withCornerStyle cornerStyle: CornerStyle, backgroundColor: UIColor? = nil, textColor: UIColor? = nil) -> CommonButton {
+        
+        let button = CommonButton()
+        button.cornerStyle = cornerStyle
+        button.backgroundColor = backgroundColor
+        if let textColor = textColor {
+            
+            button.titleLabel?.textColor = textColor
+        }
+        
+        return button
+    }
 }
 
 // MARK: - Layout
