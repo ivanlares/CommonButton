@@ -16,14 +16,10 @@ class ExampleViewController: UIViewController {
     
     var indicatorButton: CommonButton = {
         
-        let button = CommonButton()
+        let button = CommonButton.borderedButton(borderColor: .lightGray, backgroundColor: .white, textColor: .lightGray)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = .white
         button.setTitle("Indicator", for: .normal)
-        button.setTitleColor(.lightGray, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 24, weight: UIFont.Weight.regular)
-        let borderConfiguration = CommonButton.BorderConfiguration(width: CommonButton.Constants.suggestedBorderWidth, color: .lightGray)
-        button.borderConfiguration = borderConfiguration
         button.cornerStyle = .round
         
         return button
