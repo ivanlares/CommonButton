@@ -65,10 +65,9 @@ public class CommonButton: ActivityIndicatorButton {
     var shouldDim: Bool = true
     
     override public var isHighlighted: Bool {
-        
+                
         didSet{
-            if shouldDim{
-                alpha = isHighlighted ? 0.3 : 1.0
+            if shouldDim {
                 alpha = isHighlighted ? 0.3 : 1.0
             }
         }
@@ -77,8 +76,7 @@ public class CommonButton: ActivityIndicatorButton {
     override public var isEnabled: Bool {
         
         didSet{
-            if shouldDim{
-                alpha = isEnabled ? 1.0 : 0.3
+            if shouldDim {
                 alpha = isEnabled ? 1.0 : 0.3
             }
         }
@@ -112,7 +110,7 @@ public class CommonButton: ActivityIndicatorButton {
     /// Border width is set to suggested value by default
     public static func borderedButton(borderColor: UIColor, borderWidth: CGFloat = Constants.suggestedBorderWidth, cornerStyle: CornerStyle = .round, backgroundColor: UIColor, textColor: UIColor) -> CommonButton{
         
-        let button = CommonButton()
+        let button = CommonButton(type: .custom)
         let borderConfiguration = BorderConfiguration(width: borderWidth, color: borderColor)
         button.borderConfiguration = borderConfiguration
         button.cornerStyle = cornerStyle
@@ -125,7 +123,7 @@ public class CommonButton: ActivityIndicatorButton {
     /// Returns an instance of CommonButton, with the provided corner style.
     public static func button(withCornerStyle cornerStyle: CornerStyle, backgroundColor: UIColor? = nil, textColor: UIColor? = nil) -> CommonButton {
         
-        let button = CommonButton()
+        let button = CommonButton(type: .custom)
         button.cornerStyle = cornerStyle
         button.backgroundColor = backgroundColor
         if let textColor = textColor {

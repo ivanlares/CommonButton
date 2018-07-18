@@ -21,7 +21,7 @@ class ExampleViewController: UIViewController {
         button.setTitle("Indicator", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 24, weight: UIFont.Weight.regular)
         button.cornerStyle = .round
-        
+
         return button
     }()
     
@@ -31,6 +31,13 @@ class ExampleViewController: UIViewController {
         // configure IB buttons
         roundButton.cornerStyle = .round
         clipedButton.cornerStyle = .cliped
+        clipedButton.touchUpInsideAction = {
+            self.clipedButton.startAnimating()
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                self.clipedButton.stopAnimating()
+            })
+        }
         
         // add third button programatically
         addIndicatorButtonProgramatically()
