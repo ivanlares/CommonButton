@@ -15,10 +15,12 @@ For example:
 [See specification](https://github.com/ivanlares/CommonButton/blob/master/SPECIFICATIONS.md) for full list of features.
 
 
-## Example 
+## Usage 
 
 
 Run the example project to see the framework in action.
+
+**Important:** Use `.custom` UIButton type. The default when initializing button programmatically is `.custom` but in interface builder `.system` is the default.
 
 
 ![Example](https://github.com/ivanlares/CommonButton/blob/master/Github%20Image%20Assets/ExampleGif.gif)
