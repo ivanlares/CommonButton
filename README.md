@@ -20,10 +20,12 @@ For example:
 
 Run the example project to see the framework in action.
 
+
+![Example](https://github.com/ivanlares/CommonButton/blob/master/Github%20Image%20Assets/roundButon.gif)
+![Example](https://github.com/ivanlares/CommonButton/blob/master/Github%20Image%20Assets/clipedButon.gif)
+![Example](https://github.com/ivanlares/CommonButton/blob/master/Github%20Image%20Assets/indicatorButton.gif)
+
 **Important:** Use `.custom` UIButton type. The default when initializing button programmatically is `.custom` but in interface builder `.system` is the default.
-
-
-![Example](https://github.com/ivanlares/CommonButton/blob/master/Github%20Image%20Assets/ExampleGif.gif)
 
 
 ## Installation
