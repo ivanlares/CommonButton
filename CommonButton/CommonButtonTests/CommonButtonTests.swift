@@ -15,7 +15,7 @@ class CommonButtonTests: XCTestCase {
     // it should be called when button is touched up inside
     func testTouchUpInsideAction() {
         
-        let button = CommonButton()
+        let button = CommonButton(type: .custom)
         
         var isButtonTouched = false
         button.touchUpInsideAction = {
@@ -29,7 +29,7 @@ class CommonButtonTests: XCTestCase {
 
     func testCornerStyle() {
         
-        let button = CommonButton()
+        let button = CommonButton(type: .custom)
         
         button.cornerStyle = .cliped
         XCTAssertEqual(button.cornerStyle, .cliped)
@@ -40,7 +40,7 @@ class CommonButtonTests: XCTestCase {
     
     func testBorderConfiguration() {
         
-        let button = CommonButton()
+        let button = CommonButton(type: .custom)
         
         let expectedWidths: [CGFloat] = [1, 0, 2.3]
         let expectedColors: [UIColor?] = [.red, .blue, nil]
@@ -57,7 +57,7 @@ class CommonButtonTests: XCTestCase {
     
     func testTouchRectMarginExtension() {
         
-        let button = CommonButton()
+        let button = CommonButton(type: .custom)
         
         // test default value
         XCTAssertEqual(button.touchRectMarginExtension, 0)
@@ -72,7 +72,7 @@ class CommonButtonTests: XCTestCase {
     
     func testDimming() {
         
-        let button = CommonButton()
+        let button = CommonButton(type: .custom)
     
         // test default value
         // shouldDim should be true by default
@@ -103,6 +103,37 @@ class CommonButtonTests: XCTestCase {
         XCTAssert(button.alpha == 1)
     }
     
+    func testShadow() {
+        
+        let button = CommonButton(type: .custom)
+        
+        // default should be nil
+        XCTAssertNil(button.shadowConfiguration)
+        
+        let expectedColors = [UIColor.red, .clear, .blue, nil]
+        let expectedOpacities = [Float(0), 1.0, nil, -1.0]
+        let expectedOffsets = [nil, CGSize.zero, CGSize(width: -1, height: -1), CGSize(width: 1, height: 1)]
+        let expectedRadii = [CGFloat(0), -1, 1, nil]
+        let expectedPaths = [
+            nil,
+            CGPath(rect: CGRect(origin: .zero, size: CGSize(width: 20, height: 20)), transform: nil),
+            CGPath(rect: CGRect(origin: .zero, size: CGSize(width: 30, height: 20)), transform: nil),
+            CGPath(roundedRect: CGRect(origin: .zero, size: CGSize(width: 44, height: 33)), cornerWidth: 10, cornerHeight: 10, transform: nil)
+        ]
+        let testCount = 4
+        
+        for index in stride(from: 0, to: testCount, by: 1) {
+            
+            let shadowConfiguration = CommonButton.ShadowConfiguration(shadowColor: expectedColors[index], shadowOpacity: expectedOpacities[index], shadowOffset: expectedOffsets[index], shadowRadius: expectedRadii[index], shadowPath: expectedPaths[index])
+            
+            XCTAssertEqual(expectedColors[index], shadowConfiguration.shadowColor)
+            XCTAssertEqual(expectedOpacities[index], shadowConfiguration.shadowOpacity)
+            XCTAssertEqual(expectedOffsets[index], shadowConfiguration.shadowOffset)
+            XCTAssertEqual(expectedRadii[index], shadowConfiguration.shadowRadius)
+            XCTAssertEqual(expectedPaths[index], shadowConfiguration.shadowPath)
+        }
+    }
+    
     func testStaticBorderStyledFactoryMethod() {
         
         let expectedBorderColors: [UIColor] = [.clear, .blue, .lightGray]
@@ -117,7 +148,7 @@ class CommonButtonTests: XCTestCase {
             
             XCTAssertEqual(button.borderConfiguration?.color, expectedBorderColors[index])
             XCTAssertEqual(button.backgroundColor, expectedBackgroundColors[index])
-            XCTAssertEqual(button.titleLabel?.textColor, expectedTextColors[index])
+            XCTAssertEqual(button.titleColor(for: .normal), expectedTextColors[index])
         }
     }
     
@@ -134,7 +165,21 @@ class CommonButtonTests: XCTestCase {
             
             XCTAssertEqual(button.cornerStyle, expectedCornerStyles[index])
             XCTAssertEqual(button.backgroundColor, expectedBackgroundColors[index])
-            XCTAssertEqual(button.titleLabel?.textColor, expectedTextColors[index])
+            XCTAssertEqual(button.titleColor(for: .normal), expectedTextColors[index])
         }
+    }
+    
+    func testShadowDefaultSetter() {
+        
+        let button = CommonButton(type: .custom)
+        
+        // test default values according to docs
+        //Color = lightGray, opacity = 1, offset = 0, radius = 10, path = nil
+        button.setDefaultShadow()
+        
+        XCTAssertEqual(button.shadowConfiguration?.shadowColor, .lightGray)
+        XCTAssertEqual(button.shadowConfiguration?.shadowOpacity, 1)
+        XCTAssertEqual(button.shadowConfiguration?.shadowRadius, 10)
+        XCTAssertEqual(button.shadowConfiguration?.shadowPath, nil)
     }
 }

@@ -12,6 +12,7 @@
 		EA1C71FB20FDD067007BF59F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA1C71F920FDD067007BF59F /* Main.storyboard */; };
 		EA1C71FD20FDD068007BF59F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA1C71FC20FDD068007BF59F /* Assets.xcassets */; };
 		EA1C720020FDD068007BF59F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA1C71FE20FDD068007BF59F /* LaunchScreen.storyboard */; };
+		EA1C72132102BFB8007BF59F /* ShadowConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1C72122102BFB8007BF59F /* ShadowConfiguration.swift */; };
 		EA8DFBD520F92B78008E4EEC /* CommonButton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA8DFBCB20F92B77008E4EEC /* CommonButton.framework */; };
 		EA8DFBDA20F92B78008E4EEC /* CommonButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8DFBD920F92B78008E4EEC /* CommonButtonTests.swift */; };
 		EA8DFBDC20F92B78008E4EEC /* CommonButton.h in Headers */ = {isa = PBXBuildFile; fileRef = EA8DFBCE20F92B77008E4EEC /* CommonButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -47,6 +48,7 @@
 		EA1C71FC20FDD068007BF59F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA1C71FF20FDD068007BF59F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA1C720120FDD068007BF59F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA1C72122102BFB8007BF59F /* ShadowConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowConfiguration.swift; sourceTree = "<group>"; };
 		EA8DFBCB20F92B77008E4EEC /* CommonButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CommonButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA8DFBCE20F92B77008E4EEC /* CommonButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonButton.h; sourceTree = "<group>"; };
 		EA8DFBCF20F92B78008E4EEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 			children = (
 				EAD6CB5320F9D2A300EC348F /* BorderConfiguration.swift */,
 				EAD6CB5720F9D78800EC348F /* CornerStyle.swift */,
+				EA1C72122102BFB8007BF59F /* ShadowConfiguration.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 			files = (
 				EAD6CB5420F9D2A300EC348F /* BorderConfiguration.swift in Sources */,
 				EAD6CB4C20F965E100EC348F /* ActivityIndicatorButton.swift in Sources */,
+				EA1C72132102BFB8007BF59F /* ShadowConfiguration.swift in Sources */,
 				EAD6CB5820F9D78800EC348F /* CornerStyle.swift in Sources */,
 				EA8DFC5320F93D24008E4EEC /* CommonButton.swift in Sources */,
 			);

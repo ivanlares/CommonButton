@@ -42,6 +42,28 @@ public class CommonButton: ActivityIndicatorButton {
         }
     }
     
+    // MARK: Shadow Configuration
+    
+    /**
+     Sets shadow if not nil.
+     
+     The default shadowColor is an opaque black color
+     
+     The default shadowOpacity is 0.0
+     
+     The default shadowOffset is (0.0, -3.0)
+     
+     The default shadowRadius is 3.0
+     
+     The default shadowPath is nil
+    */
+    public var shadowConfiguration: ShadowConfiguration? = nil {
+        
+        didSet {
+            setShadow(with: shadowConfiguration)
+        }
+    }
+    
     // MARK: Touch Rect margin extension
     
     /// Margin used to extend the touch rect.
@@ -65,7 +87,7 @@ public class CommonButton: ActivityIndicatorButton {
     var shouldDim: Bool = true
     
     override public var isHighlighted: Bool {
-                
+        
         didSet{
             if shouldDim {
                 alpha = isHighlighted ? 0.3 : 1.0
@@ -108,6 +130,7 @@ public class CommonButton: ActivityIndicatorButton {
     //
     /// Corner style is round by default
     /// Border width is set to suggested value by default
+    /// Text color sets the text color for the button in the normal UIControl state
     public static func borderedButton(borderColor: UIColor, borderWidth: CGFloat = Constants.suggestedBorderWidth, cornerStyle: CornerStyle = .round, backgroundColor: UIColor, textColor: UIColor) -> CommonButton{
         
         let button = CommonButton(type: .custom)
@@ -121,6 +144,8 @@ public class CommonButton: ActivityIndicatorButton {
     }
     
     /// Returns an instance of CommonButton, with the provided corner style.
+    ///
+    /// Text color sets the text color for the button in the normal UIControl state
     public static func button(withCornerStyle cornerStyle: CornerStyle, backgroundColor: UIColor? = nil, textColor: UIColor? = nil) -> CommonButton {
         
         let button = CommonButton(type: .custom)
@@ -132,6 +157,17 @@ public class CommonButton: ActivityIndicatorButton {
         }
         
         return button
+    }
+    
+    // MARK: Configuration methods
+
+    /// Sets shadowConfiguration to a recommended value
+    ///
+    /// Color = lightGray, opacity = 1, offset = 0, radius = 10, path = nil
+    public func setDefaultShadow() {
+        
+        let shadowConfiguration = CommonButton.ShadowConfiguration(shadowColor: .lightGray, shadowOpacity: 1, shadowOffset: .zero, shadowRadius: 10, shadowPath: nil)
+        self.shadowConfiguration = shadowConfiguration
     }
 }
 
@@ -147,6 +183,7 @@ extension CommonButton {
         setBorder(with: borderConfiguration)
     }
     
+    /// sets corner style
     private func set(cornerStyle: CornerStyle) {
         
         switch cornerStyle {
@@ -157,13 +194,35 @@ extension CommonButton {
         }
     }
     
+    /**
+     The default borderWidth is 0.0
+     
+     The default borderColor is an opaque black color
+     */
     private func setBorder(with borderConfiguration: BorderConfiguration?) {
         
-        if let borderConfiguration = borderConfiguration {
-            
-            layer.borderColor = borderConfiguration.color?.cgColor
-            layer.borderWidth = borderConfiguration.width
-        }
+            layer.borderColor = borderConfiguration?.color?.cgColor
+            layer.borderWidth = borderConfiguration?.width ?? 0.0
+    }
+    
+    /**
+     The default shadowColor is an opaque black color
+     
+     The default shadowOpacity is 0.0
+     
+     The default shadowOffset is (0.0, -3.0)
+     
+     The default shadowRadius is 3.0
+     
+     The default shadowPath is nil
+     */
+    private func setShadow(with shadowConfiguration: ShadowConfiguration?) {
+        
+        layer.shadowColor = shadowConfiguration?.shadowColor?.cgColor
+        layer.shadowOpacity = shadowConfiguration?.shadowOpacity ?? 0.0
+        layer.shadowOffset = shadowConfiguration?.shadowOffset ?? CGSize(width: 0.0, height: -3.0)
+        layer.shadowRadius = shadowConfiguration?.shadowRadius ?? 3.0
+        layer.shadowPath = shadowConfiguration?.shadowPath
     }
 }
 

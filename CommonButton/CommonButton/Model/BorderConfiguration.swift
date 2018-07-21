@@ -16,8 +16,8 @@ extension CommonButton{
     
     public struct BorderConfiguration {
         
-        var width: CGFloat
-        var color: UIColor?
+        public var width: CGFloat
+        public var color: UIColor?
         
         public init(width: CGFloat, color: UIColor?) {
             
