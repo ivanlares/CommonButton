@@ -8,6 +8,7 @@ We generally don't use UIButton without configuring the button in some way.
 - clipping corners
 - rounding corners 
 - customizing border (width and color)
+- adding shadow
 - adding activity indicator
 - disabling interaction when activity indicator is on
 - dimming color when highlighted and disabled
@@ -28,6 +29,10 @@ A clipped button will be mostly squared but will have a slight rounded tip. A ro
 ---
 
 > **Corner customization** should be self explanatory.
+
+---
+
+> **Shadow customization** should be self explanatory.
 
 ___
 

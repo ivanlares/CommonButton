@@ -23,7 +23,8 @@ Run the example project to see the framework in action.
 
 ![Example](https://github.com/ivanlares/CommonButton/blob/master/Github%20Image%20Assets/roundButton.gif)
 ![Example](https://github.com/ivanlares/CommonButton/blob/master/Github%20Image%20Assets/clipedButton.gif)
-![Example](https://github.com/ivanlares/CommonButton/blob/master/Github%20Image%20Assets/indicatorButton.gif)
+![Example](https://github.com/ivanlares/CommonButton/blob/master/Github%20Image%20Assets/borderedButton.gif)
+![Example](https://github.com/ivanlares/CommonButton/blob/master/Github%20Image%20Assets/shadowButton.gif)
 
 **Important:** Use `.custom` UIButton type. The default when initializing button programmatically is `.custom` but in interface builder `.system` is the default.
 
@@ -36,3 +37,4 @@ For simplicity cocoa-pods is not used. This framework does **not** and will not 
 
 Take a look at the [SPECIFICATIONS.md](https://github.com/ivanlares/CommonButton/blob/master/SPECIFICATIONS.md) file to learn more about what the framework is trying to accomplish. 
 Contribute by forking the Github repo and then making a pull request after the framework is updated with your changes.
+Note: Run the unit tests before pushing changes.

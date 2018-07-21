@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZtH-UG-8Yx" customClass="CommonButton" customModule="CommonButton">
-                                <rect key="frame" x="117" y="194" width="140" height="41"/>
+                                <rect key="frame" x="117" y="229.5" width="140" height="41"/>
                                 <color key="backgroundColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="140" id="9GN-sW-Ssi">
@@ -36,7 +36,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Plq-6g-mct" customClass="CommonButton" customModule="CommonButton">
-                                <rect key="frame" x="117" y="123" width="140" height="41"/>
+                                <rect key="frame" x="117" y="138.5" width="140" height="41"/>
                                 <color key="backgroundColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="140" id="GRb-Kb-ObP">
@@ -54,7 +54,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CommonButton Example" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CDa-oI-bEp">
-                                <rect key="frame" x="8" y="20" width="359" height="95.5"/>
+                                <rect key="frame" x="8" y="20" width="359" height="111"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -62,25 +62,43 @@
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="38"/>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BcK-yK-Aiy" customClass="CommonButton" customModule="CommonButton">
+                                <rect key="frame" x="117" y="320.5" width="140" height="41"/>
+                                <color key="backgroundColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="nHN-OS-YUH">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="150"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Shadow">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CDa-oI-bEp" secondAttribute="trailing" constant="8" id="Tua-d7-D3P"/>
                             <constraint firstItem="Plq-6g-mct" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="V2B-6b-rbh"/>
                             <constraint firstItem="CDa-oI-bEp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Vdr-qe-ko1"/>
+                            <constraint firstItem="BcK-yK-Aiy" firstAttribute="top" secondItem="ZtH-UG-8Yx" secondAttribute="bottom" constant="50" id="XOj-Go-nUt">
+                                <variation key="heightClass=regular-widthClass=regular" constant="60"/>
+                            </constraint>
                             <constraint firstItem="Plq-6g-mct" firstAttribute="top" secondItem="CDa-oI-bEp" secondAttribute="bottom" constant="7.5" id="bcn-Si-9jV"/>
                             <constraint firstItem="ZtH-UG-8Yx" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="e93-HP-h93"/>
-                            <constraint firstItem="ZtH-UG-8Yx" firstAttribute="top" secondItem="Plq-6g-mct" secondAttribute="bottom" constant="30" id="esF-yp-TZc">
-                                <variation key="heightClass=regular-widthClass=regular" constant="40"/>
+                            <constraint firstItem="ZtH-UG-8Yx" firstAttribute="top" secondItem="Plq-6g-mct" secondAttribute="bottom" constant="50" id="esF-yp-TZc">
+                                <variation key="heightClass=regular-widthClass=regular" constant="60"/>
                             </constraint>
                             <constraint firstItem="CDa-oI-bEp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="iXr-Fm-UpI"/>
-                            <constraint firstItem="CDa-oI-bEp" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1/7" id="v28-Ub-SHJ"/>
+                            <constraint firstItem="CDa-oI-bEp" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1/6" id="v28-Ub-SHJ"/>
+                            <constraint firstItem="BcK-yK-Aiy" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="y1u-2R-rFj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="clipedButton" destination="ZtH-UG-8Yx" id="T9D-C8-MJw"/>
                         <outlet property="roundButton" destination="Plq-6g-mct" id="lFL-hc-OH1"/>
+                        <outlet property="shadowButton" destination="BcK-yK-Aiy" id="Yhc-mS-HN0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
