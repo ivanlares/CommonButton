@@ -106,7 +106,7 @@ open class CommonButton: ActivityIndicatorButton {
     
     // MARK: Initializers
     
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         
         super.init(frame: frame)
         commonInit()
