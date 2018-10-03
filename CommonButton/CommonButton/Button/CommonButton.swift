@@ -12,7 +12,7 @@ import Foundation
  This class inherits from ActivityIndicatorButton and adds additional functionality.
  */
 @IBDesignable
-public class CommonButton: ActivityIndicatorButton {
+open class CommonButton: ActivityIndicatorButton {
     
     // MARK: Closure Actions
     
@@ -71,7 +71,7 @@ public class CommonButton: ActivityIndicatorButton {
     @IBInspectable
     public var touchRectMarginExtension: CGFloat = 0
     
-    override public func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+    override open func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
         
         let area = self.bounds.insetBy(dx: -touchRectMarginExtension, dy: -touchRectMarginExtension)
         
@@ -86,7 +86,7 @@ public class CommonButton: ActivityIndicatorButton {
     @IBInspectable
     var shouldDim: Bool = true
     
-    override public var isHighlighted: Bool {
+    override open var isHighlighted: Bool {
         
         didSet{
             if shouldDim {
@@ -95,7 +95,7 @@ public class CommonButton: ActivityIndicatorButton {
         }
     }
     
-    override public var isEnabled: Bool {
+    override open var isEnabled: Bool {
         
         didSet{
             if shouldDim {
@@ -175,7 +175,7 @@ public class CommonButton: ActivityIndicatorButton {
 
 extension CommonButton {
     
-    override public func layoutSubviews() {
+    override open func layoutSubviews() {
         
         super.layoutSubviews()
         

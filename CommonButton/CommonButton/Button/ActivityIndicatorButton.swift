@@ -11,7 +11,7 @@ import UIKit
 /**
  This is a normal UIButton with an added UIActivityIndicatorView and it's related methods.
  */ 
-public class ActivityIndicatorButton: UIButton {
+open class ActivityIndicatorButton: UIButton {
     
     private var _buttonState: ButtonState = .normal
     
